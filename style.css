@@ -1,0 +1,339 @@
+/* =====================================================
+   SMART MEDICATION BOX - REFINED STYLES
+   ===================================================== */
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1e40af;
+    --bg-color: #f1f5f9;
+    --card-bg: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --border: #cbd5e1;
+    --success: #22c55e;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 600px;
+    /* Constrain width for vertical column look */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin: 0 0 5px 0;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* 
+   VERTICAL DASHBOARD LAYOUT 
+   Crucial: Display flex column to force top-to-bottom order 
+*/
+.dashboard-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border);
+    position: relative;
+    /* Do NOT hide overflow generally, or dropdowns/shadows might clip. 
+       Only hide if strictly needed for rounded corners on children. */
+}
+
+/* Compartment Colors - Matching Physical Layout Order */
+#card-4 {
+    border-left: 8px solid #8b5cf6;
+}
+
+/* Purple (Top) */
+#card-3 {
+    border-left: 8px solid #f59e0b;
+}
+
+/* Amber */
+#card-2 {
+    border-left: 8px solid #10b981;
+}
+
+/* Green */
+#card-1 {
+    border-left: 8px solid #3b82f6;
+}
+
+/* Blue (Bottom) */
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    /* Handle small screens */
+    gap: 10px;
+}
+
+.card-header h2 {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.status-indicator {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.status-taken {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.status-pending {
+    background: #fef9c3;
+    color: #854d0e;
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+/* Time Inputs - Flex wrap for small screens */
+.time-inputs {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.time-input {
+    width: 70px;
+    padding: 10px;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.time-ampm {
+    padding: 10px;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    background: white;
+}
+
+/* Medicine List - Fix Responsiveness */
+.medicines-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.medicine-row {
+    display: flex;
+    /* Use Flexbox */
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    /* Ensure row takes full width */
+}
+
+/* Medicine Name: Grow to fill space */
+.med-name {
+    flex: 1 1 auto;
+    /* Grow, shrink, auto basis */
+    min-width: 0;
+    /* CRITICAL: Allows shrinking below content size */
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+/* Tablet Count: Fixed width, but don't squish too much */
+.med-count {
+    flex: 0 0 70px;
+    /* Don't grow, don't shrink, fixed 70px */
+    width: 70px;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* Delete Button: Never hidden, fixed size */
+.btn-remove-med {
+    flex: 0 0 44px;
+    /* Fixed sized, no shrinking */
+    width: 44px;
+    height: 44px;
+    background: #fee2e2;
+    color: #ef4444;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Ensure it doesn't get pushed off */
+}
+
+.btn-add-med {
+    width: 100%;
+    padding: 12px;
+    background: #f8fafc;
+    border: 2px dashed var(--border);
+    color: var(--text-muted);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+/* Buttons */
+.btn-save {
+    width: 100%;
+    padding: 14px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.btn-save:hover {
+    background: var(--primary-dark);
+}
+
+/* Toggle */
+.toggle-switch {
+    display: inline-block;
+    position: relative;
+    width: 60px;
+    height: 32px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cbd5e1;
+    border-radius: 34px;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: var(--primary);
+}
+
+input:checked+.slider:before {
+    transform: translateX(28px);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .time-input {
+        width: 50px;
+        padding: 8px;
+        font-size: 1rem;
+    }
+
+    .med-count {
+        flex: 0 0 50px;
+        width: 50px;
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .btn-remove-med {
+        flex: 0 0 40px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .med-name {
+        padding: 8px;
+        font-size: 0.95rem;
+    }
+}

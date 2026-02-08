@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Medication Box - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>💊 Medication Dashboard</h1>
+            <p class="subtitle">Manager View</p>
+        </header>
+
+        <!-- Vertical Column Layout - REORDERED: 1 (Top) -> 4 (Bottom) -->
+        <main class="dashboard-column">
+
+            <!-- Compartment 1 (Top) -->
+            <section class="card" id="card-1">
+                <div class="card-header">
+                    <h2>Compartment 1</h2>
+                    <span class="status-indicator" id="status-1">Loading...</span>
+                </div>
+                <form class="compartment-form" data-compartment="1">
+                    <div class="form-group">
+                        <label>⏰ Medication Time</label>
+                        <div class="time-inputs">
+                            <input type="number" class="time-input hour" min="1" max="12" placeholder="HH" required>
+                            <span>:</span>
+                            <input type="number" class="time-input minute" min="0" max="59" placeholder="MM" required>
+                            <select class="time-ampm">
+                                <option value="AM">AM</option>
+                                <option value="PM">PM</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>💊 Medicines List</label>
+                        <div class="medicines-list"></div>
+                        <button type="button" class="btn-add-med">+ Add Medicine</button>
+                    </div>
+                    <div class="form-group">
+                        <label>🔔 Buzzer Alert</label>
+                        <label class="toggle-switch">
+                            <input type="checkbox" class="buzzer-toggle" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn-save">💾 Save Schedule</button>
+                </form>
+            </section>
+
+            <!-- Compartment 2 -->
+            <section class="card" id="card-2">
+                <div class="card-header">
+                    <h2>Compartment 2</h2>
+                    <span class="status-indicator" id="status-2">Loading...</span>
+                </div>
+                <form class="compartment-form" data-compartment="2">
+                    <div class="form-group">
+                        <div class="time-inputs">
+                            <input type="number" class="time-input hour" min="1" max="12" placeholder="HH" required>
+                            <span>:</span>
+                            <input type="number" class="time-input minute" min="0" max="59" placeholder="MM" required>
+                            <select class="time-ampm">
+                                <option value="AM">AM</option>
+                                <option value="PM">PM</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="medicines-list"></div>
+                        <button type="button" class="btn-add-med">+ Add Medicine</button>
+                    </div>
+                    <div class="form-group">
+                        <label class="toggle-switch">
+                            <input type="checkbox" class="buzzer-toggle" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn-save">💾 Save Schedule</button>
+                </form>
+            </section>
+
+            <!-- Compartment 3 -->
+            <section class="card" id="card-3">
+                <div class="card-header">
+                    <h2>Compartment 3</h2>
+                    <span class="status-indicator" id="status-3">Loading...</span>
+                </div>
+                <form class="compartment-form" data-compartment="3">
+                    <div class="form-group">
+                        <div class="time-inputs">
+                            <input type="number" class="time-input hour" min="1" max="12" placeholder="HH" required>
+                            <span>:</span>
+                            <input type="number" class="time-input minute" min="0" max="59" placeholder="MM" required>
+                            <select class="time-ampm">
+                                <option value="AM">AM</option>
+                                <option value="PM">PM</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="medicines-list"></div>
+                        <button type="button" class="btn-add-med">+ Add Medicine</button>
+                    </div>
+                    <div class="form-group">
+                        <label class="toggle-switch">
+                            <input type="checkbox" class="buzzer-toggle" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn-save">💾 Save Schedule</button>
+                </form>
+            </section>
+
+            <!-- Compartment 4 (Bottom) -->
+            <section class="card" id="card-4">
+                <div class="card-header">
+                    <h2>Compartment 4</h2>
+                    <span class="status-indicator" id="status-4">Loading...</span>
+                </div>
+                <form class="compartment-form" data-compartment="4">
+                    <div class="form-group">
+                        <div class="time-inputs">
+                            <input type="number" class="time-input hour" min="1" max="12" placeholder="HH" required>
+                            <span>:</span>
+                            <input type="number" class="time-input minute" min="0" max="59" placeholder="MM" required>
+                            <select class="time-ampm">
+                                <option value="AM">AM</option>
+                                <option value="PM">PM</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="medicines-list"></div>
+                        <button type="button" class="btn-add-med">+ Add Medicine</button>
+                    </div>
+                    <div class="form-group">
+                        <label class="toggle-switch">
+                            <input type="checkbox" class="buzzer-toggle" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn-save">💾 Save Schedule</button>
+                </form>
+            </section>
+
+        </main>
+
+        <br><br>
+    </div>
+
+    <!-- Firebase Compat -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
